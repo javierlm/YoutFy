@@ -1,8 +1,8 @@
 # YoutFy
 
 <p align="center">
-  <img src="YoutFy\webextension\icons\logo_64.png">
-  <div align="center">Icon disegn by <a href="https://www.flaticon.es/autores/iconixar" title="iconixar">iconixar</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
+  <img src="youtfy_logo.png">
+  <div align="center">Icon design by <a href="https://www.flaticon.es/autores/iconixar" title="iconixar">iconixar</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></div>
 </p>
 
 ### Description
