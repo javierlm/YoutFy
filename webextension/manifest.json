@@ -1,0 +1,43 @@
+{
+
+  "name": "YoutFy",
+  "version": "1",
+  "manifest_version": 2,
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "youtfy@extension",
+      "strict_min_version": "55.0"
+    }
+  },
+
+  "icons": {
+    "64": "icons/logo_64.png"
+  },
+
+  "browser_action": {
+    "browser_style": true,
+    "default_icon": "icons/logo_64.png"
+  },
+
+  "permissions": [
+    "*://*/*",
+    "identity",
+    "cookies",
+    "notifications",
+    "<all_urls>",
+    "webRequest",
+    "storage",
+    "webRequestBlocking",
+    "webNavigation",
+    "tabs",
+    "*://www.youtube.com/*"
+  ],
+
+  "background": {
+    "scripts": [
+      "background/browser-polyfill.js",
+      "background/spotifyAuthorize.js",
+      "background/main.js"
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+webextension/.prettierrc
+backend/.vscode/launch.json
+backend/.eslintrc.json
+backend/node_modules
+backend/server.cert
+backend/server.key
