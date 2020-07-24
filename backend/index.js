@@ -312,13 +312,9 @@ app.post('/', async (req, res) => {
       printSummary(add, newSong));
 });
 
-app.listen(PORT, '0.0.0.0', function () {
-  console.log(`YoutFy listening on port ${PORT}`);
-});
-
 https.createServer({
   key: fs.readFileSync('server.key'),
   cert: fs.readFileSync('server.cert')
-}, app).listen(PORT, () => {
-  console.log('Listening...');
+}, app).listen(PORT, '0.0.0.0', () => {
+  console.log(`YoutFy listening on port ${PORT}`);
 });
