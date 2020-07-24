@@ -89,7 +89,6 @@ async function sendData(request, add) {
   sendSongToBackend(request, add)
     .then(async (responseCode) => {
       if (responseCode == 401) {
-        await browser.storage.local.remove("spotify_access_token");
         let newTokenInfo = await getRefreshedToken();
         responseCode = await sendSongToBackend(request, add);
       } else if (responseCode == 200) {
