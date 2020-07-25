@@ -1,0 +1,41 @@
+{
+    "extensionName": {
+      "message": "YoutFy",
+      "description": "Nombre de la extensión"
+    },
+  
+    "extensionDescription": {
+      "message": "Añade canciones automáticamente desde los vídeos a los que has dado like, a tu cuenta de Spotify",
+      "description": "Descripción de la extensión"
+    },
+
+    "notificationTitle": {
+        "message": "YoutFy",
+        "description": "Título por defecto de la WebExtension"
+    },
+
+    "notificationCorrectConfiguration": {
+        "message": "YoutFy se ha configurado correctamente. ¡Ya puedes usarlo!",
+        "description": "Contenido de la notificación de configuración correcta de la extensión"
+    },
+  
+    "notificationAddingContent": {
+      "message": "Añadiendo canción a Spotify...",
+      "description": "Contenido para la notificación de añadir canción"
+    },
+
+    "notificationDeletingContent": {
+        "message": "Borrando canción de la lista de Spotify...",
+        "description": "Contenido para la notificación de borrar canción"
+    },
+
+    "notificationSuccessContent": {
+        "message": "Operación completada correctamente",
+        "description": "Contenido para la notificación de éxito"
+    },
+
+    "notificationErrorContent": {
+        "message": "Ha ocurrido un error en la operación: ",
+        "description": "Contenido para la notificación de fallo"
+    }
+  }

@@ -76,8 +76,8 @@ async function sendSongToBackend(request, add) {
 async function sendData(request, add) {
   let responseCode;
   let message = add
-    ? "Adding song to Spotify..."
-    : "Deleting song from Spotify's playlist...";
+    ? browser.i18n.getMessage("notificationAddingContent")
+    : browser.i18n.getMessage("notificationDeletingContent");
 
   browser.notifications.create({
     type: "basic",
@@ -96,19 +96,19 @@ async function sendData(request, add) {
           type: "basic",
           title: "YoutFy",
           iconUrl: "icons/tick.png",
-          message: "Operation completed succesfully",
+          message: browser.i18n.getMessage("notificationSuccessContent"),
         });
       } else {
         browser.notifications.create({
           type: "basic",
           title: "YoutFy",
           iconUrl: "icons/error.png",
-          message: "There was an error: Code " + responseCode,
+          message: browser.i18n.getMessage("notificationErrorContent") + " Code " + responseCode,
         });
       }
     })
     .catch((reason) => {
-      console.log("There was an error: " + reason);
+      console.log(browser.i18n.getMessage("notificationErrorContent") + reason);
     });
 }
 
@@ -118,8 +118,7 @@ chrome.browserAction.onClicked.addListener(() => {
       type: "basic",
       title: "YoutFy",
       iconUrl: "icons/tick.png",
-      message:
-        "YoutFy has configured correctly. You can use it now",
+      message: browser.i18n.getMessage("notificationCorrectConfiguration"),
     });
   });
 });

@@ -1,0 +1,41 @@
+{
+    "extensionName": {
+      "message": "YoutFy",
+      "description": "Name of the extension"
+    },
+  
+    "extensionDescription": {
+      "message": "Add songs from YouTube liked videos automatically to your Spotify account",
+      "description": "Description of the extension"
+    },
+
+    "notificationTitle": {
+        "message": "YoutFy",
+        "description": "Default title for the WebExtension"
+    },
+
+    "notificationCorrectConfiguration": {
+        "message": "YoutFy has been configured correctly. You can use it now!",
+        "description": "Content for the notification of the correct configuration of the WebExtension"
+    },
+  
+    "notificationAddingContent": {
+      "message": "Adding song to Spotify...",
+      "description": "Content for adding song notification"
+    },
+
+    "notificationDeletingContent": {
+        "message": "Deleting song from Spotify's playlist...",
+        "description": "Content for deleting song notification"
+    },
+
+    "notificationSuccessContent": {
+      "message": "Operation completed succesfully",
+      "description": "Content for the success notification"
+    },
+
+    "notificationErrorContent": {
+      "message": "There was an error: ",
+      "description": "Content for operation failed"
+    }
+  }
