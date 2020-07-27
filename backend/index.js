@@ -273,7 +273,11 @@ app.post('/', async (req, res) => {
           function () {
             newSong.success = true;
             newSong.save(function (err) {
-              if (err) console.log(err);
+              if (err.code && err.code === 11000) {
+                console.warn('Song already on database');
+              } else {
+                console.err(err);
+              }
             });
             return res
               .status(200)
@@ -283,7 +287,11 @@ app.post('/', async (req, res) => {
             console.log('Something went wrong!', err);
             newSong.success = false;
             newSong.save(function (err) {
-              if (err) console.log('Error on save!');
+              if (err.code && err.code === 11000) {
+                console.warn('Song already on database');
+              } else {
+                console.err(err);
+              }
             });
             return res
               .status(500)
