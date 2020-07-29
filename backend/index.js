@@ -1,6 +1,5 @@
 const express = require('express');
-const ytdl = require('youtube-dl');
-const util = require('util');
+const ytdl = require('ytdl-core');
 const SpotifyWebApi = require('spotify-web-api-node');
 const https = require('https');
 const fs = require('fs');
@@ -162,25 +161,25 @@ function replaceCharactersFromArtist(artist) {
 function extractSongInfo(promisesArray, newSong) {
   let songsInfo = [];
   for (let video of promisesArray) {
-    if (video.track != null && video.artist != null) {
-      newSong.artist = entities.decode(video.artist.split("'").join('')).trim();
-      newSong.song = entities.decode(video.track.split("'").join('')).trim();
-      newSong.title = video.title;
+    if (video.videoDetails.media.song != null && video.videoDetails.media.artist != null) {
+      newSong.artist = entities.decode(video.videoDetails.media.artist.split("'").join('')).trim();
+      newSong.song = entities.decode(video.videoDetails.media.song.split("'").join('')).trim();
+      newSong.title = video.videoDetails.title;
 
       songsInfo.push({
-        artist: replaceCharactersFromArtist(video.artist),
-        track: replaceCharactersFromTrack(video.track),
+        artist: replaceCharactersFromArtist(video.videoDetails.media.artist),
+        track: replaceCharactersFromTrack(video.videoDetails.media.song),
       });
     } else {
       console.log(
         "-------- There's no info about the song given by Youtube, trying alternative method based on the video title --------"
       );
-      const videoInfoTitle = video.title.split('-');
+      const videoInfoTitle = video.videoDetails.title.split('-');
 
       video.artist = video.artist || videoInfoTitle[0];
       video.track = video.track || videoInfoTitle[1];
 
-      newSong.title = video.title;
+      newSong.title = video.videoDetails.title;
       newSong.song = entities.decode(video.track.split("'").join('')).trim();
       newSong.artist = videoInfoTitle[0].trim();
 
@@ -240,9 +239,8 @@ app.post('/', async (req, res) => {
   console.log(date + ' Request received');
   res.set('Content-Type', 'application/json');
 
-  const getInfoVideo = util.promisify(ytdl.getInfo);
   for (let video of req.body.param) {
-    promisesArray.push(getInfoVideo(video));
+    promisesArray.push(ytdl.getInfo(video));
     newSong.urlVideo = video;
   }
 
