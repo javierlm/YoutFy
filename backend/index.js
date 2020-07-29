@@ -147,10 +147,11 @@ function replaceCharactersFromArtist(artist) {
   artist = entities
     .decode(
       artist
-        .replace('&', ',')
-        .replace('vs', ',')
-        .replace('ft.', ',')
-        .replace('feat.', ',')
+        .replace(' &', ',')
+        .replace(' vs', ',')
+        .replace(' ft.', ',')
+        .replace(' feat.', ',')
+        .replace(' feat', ',')
         .split("'")
         .join('')
     )
