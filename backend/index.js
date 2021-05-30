@@ -5,7 +5,7 @@ const https = require('https');
 const fs = require('fs');
 const Song = require('./models/songSchema');
 const session = require('express-session');
-const MongoStore = require('connect-mongo')(session);
+const MongoStore = require('connect-mongo');
 
 const PORT = process.env.PORT || 5000;
 const MONGOURI = process.env.MONGOSTRING;
@@ -13,8 +13,7 @@ const clientId = process.env.CLIENTID;
 const clientSecret = process.env.CLIENTSECRET;
 const cookieSecret = process.env.COOKIESECRET;
 
-const Entities = require('html-entities').AllHtmlEntities;
-const entities = new Entities();
+const entities = require('html-entities');
 
 const app = express();
 
@@ -25,8 +24,8 @@ app.use(
     secret: cookieSecret,
     resave: false,
     saveUninitialized: false,
-    store: new MongoStore({
-      url:
+    store: MongoStore.create({
+      mongoUrl:
         MONGOURI,
       autoReconnect: true,
     }),
