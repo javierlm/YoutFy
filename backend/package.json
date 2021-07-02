@@ -14,14 +14,14 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "html-entities": "^2.3.2",
-    "mongoose": "^5.12.12",
+    "mongoose": "^5.13.1",
     "node-fetch": "^2.6.1",
     "request": "^2.88.2",
     "spotify-web-api-node": "^5.0.2",
-    "ytdl-core": "^4.8.2"
+    "ytdl-core": "^4.8.3"
   },
   "devDependencies": {
-    "eslint": "^7.27.0",
+    "eslint": "^7.29.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-google": "^0.14.0",
     "eslint-config-prettier": "^8.3.0",
@@ -30,7 +30,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-standard": "^4.1.0",
-    "jest": "^27.0.3",
+    "jest": "^27.0.6",
     "prettier-eslint": "^12.0.0"
   }
 }
