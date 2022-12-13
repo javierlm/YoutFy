@@ -11,7 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "connect-mongo": "^4.4.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-session": "^1.17.2",
     "html-entities": "^2.3.2",
     "mongoose": "^5.13.1",
